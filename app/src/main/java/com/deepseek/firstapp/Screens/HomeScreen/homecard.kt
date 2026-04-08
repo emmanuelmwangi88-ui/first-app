@@ -1,4 +1,4 @@
-package com.deepseek.firstapp.HomeScreen
+package com.deepseek.firstapp.Screens.HomeScreen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size

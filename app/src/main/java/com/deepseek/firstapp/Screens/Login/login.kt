@@ -1,7 +1,8 @@
-package com.deepseek.firstapp.Login
+package com.deepseek.firstapp.Screens.Login
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,17 +35,21 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.R
+import com.deepseek.firstapp.Screens.navigation.ROUTE_REGISTER
 
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
             .padding(30.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             text = "LOGIN",
@@ -108,7 +113,7 @@ fun LoginScreen() {
         ){
             Text("LOGIN", fontSize = 20.sp)
         }
-        TextButton(onClick = {}) {
+        TextButton(onClick = {navController.navigate(ROUTE_REGISTER)}) {
             Text("Don't have an account Register")
         }
     }
@@ -118,6 +123,6 @@ fun LoginScreen() {
 @Preview(showBackground = true )
 @Composable
 fun loginscreenpreview(){
-    LoginScreen()
+    LoginScreen(rememberNavController())
 
 }

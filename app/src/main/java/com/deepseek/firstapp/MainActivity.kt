@@ -17,14 +17,14 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.deepseek.firstapp.HomeScreen.Homecard
+import com.deepseek.firstapp.Screens.navigation.AppNavHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Homecard()
+            AppNavHost()
                 }
             }
         }

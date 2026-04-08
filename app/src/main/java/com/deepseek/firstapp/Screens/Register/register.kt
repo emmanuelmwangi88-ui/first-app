@@ -1,4 +1,4 @@
-package com.deepseek.firstapp.Register
+package com.deepseek.firstapp.Screens.Register
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -32,9 +32,12 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.deepseek.firstapp.Screens.navigation.ROUTE_LOGIN
 
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -131,10 +134,10 @@ fun RegisterScreen() {
                 containerColor = Color.Gray
             )
         ) {
-            Text("com/deepseek/firstapp/Register", fontSize = 24.sp, fontFamily = FontFamily.Serif)
+            Text("LOGIN", fontSize = 24.sp, fontFamily = FontFamily.Serif)
         }
 
-        TextButton(onClick = {}) {
+        TextButton(onClick = {navController.navigate(ROUTE_LOGIN )}) {
             Text(
                 "Already have an account? Login",
                 color = Color.Blue,
@@ -147,5 +150,5 @@ fun RegisterScreen() {
 @Preview(showBackground = true)
 @Composable
 fun RegisterPreview() {
-    RegisterScreen()
+    RegisterScreen(rememberNavController())
 }

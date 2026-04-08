@@ -1,4 +1,4 @@
-package com.deepseek.firstapp.dashboard
+package com.deepseek.firstapp.Screens.dashboard
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,11 +25,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.deepseek.firstapp.HomeScreen.Homecard
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.deepseek.firstapp.Screens.HomeScreen.Homecard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DashboardScreen() {
+fun DashboardScreen(navController: NavHostController) {
     Scaffold(
         // Top bar
         topBar = {
@@ -102,5 +104,5 @@ fun DashboardScreen() {
 @Preview(showBackground = true)
 @Composable
 fun DashboardPreview() {
-    DashboardScreen()
+    DashboardScreen(rememberNavController())
 }
