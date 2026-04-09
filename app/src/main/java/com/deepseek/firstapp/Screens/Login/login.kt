@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.R
-import com.deepseek.firstapp.Screens.navigation.ROUTE_REGISTER
+import com.deepseek.firstapp.navigation.ROUTE_REGISTER
 
 
 @Composable

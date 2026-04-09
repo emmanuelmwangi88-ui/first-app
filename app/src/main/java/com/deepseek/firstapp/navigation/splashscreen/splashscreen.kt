@@ -1,4 +1,4 @@
-package com.deepseek.firstapp.Screens.navigation.splashscreen
+package com.deepseek.firstapp.navigation.splashscreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.R
-import com.deepseek.firstapp.Screens.navigation.ROUTE_LOGIN
+import com.deepseek.firstapp.navigation.ROUTE_LOGIN
 import kotlinx.coroutines.delay
 
 @Composable

@@ -1,4 +1,4 @@
-package com.deepseek.firstapp.Screens.navigation
+package com.deepseek.firstapp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -9,7 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.Screens.Login.LoginScreen
 import com.deepseek.firstapp.Screens.Register.RegisterScreen
 import com.deepseek.firstapp.Screens.dashboard.DashboardScreen
-import com.deepseek.firstapp.Screens.navigation.splashscreen.SplashScreen
+import com.deepseek.firstapp.navigation.splashscreen.SplashScreen
 
 @Composable
 fun AppNavHost(

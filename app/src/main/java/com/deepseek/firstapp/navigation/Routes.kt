@@ -1,4 +1,4 @@
-package com.deepseek.firstapp.Screens.navigation
+package com.deepseek.firstapp.navigation
 
 const val ROUTE_LOGIN="login"
 const val ROUTE_REGISTER="register"
