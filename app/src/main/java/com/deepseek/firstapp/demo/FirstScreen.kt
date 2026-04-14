@@ -48,7 +48,7 @@ fun FirstScreen(){
 Spacer(modifier = Modifier.height(32.dp))
 
         Image(
-            painter = painterResource(id=R.drawable.yuta),
+            painter = painterResource(id=R.drawable.shopify_logo),
             contentDescription = "company logo",
             modifier = Modifier
                 .size(200.dp)

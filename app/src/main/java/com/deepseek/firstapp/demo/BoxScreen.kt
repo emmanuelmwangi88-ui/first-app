@@ -28,7 +28,7 @@ fun BoxScreen(){
             contentScale = ContentScale.Crop
         )
         Text(
-            text="Welcome to 9anime",
+            text="Welcome to Shopify",
             color = Color.Yellow,
             fontSize = 36.sp,
             fontWeight = FontWeight.Bold,

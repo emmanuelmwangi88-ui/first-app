@@ -58,9 +58,14 @@ fun login(email: String,password: String) {
             navController.navigate(ROUTE_DASHBOARD)
         }
         else{
-            Toast.makeText(context,"error logging in", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"wrong email or password", Toast.LENGTH_SHORT).show()
         }
     }
 }
-    //log out function
+    //logout function
+    fun logout(){
+        mAuth.signOut()
+        navController.navigate(ROUTE_LOGIN)
+        {popUpTo(0)}
+    }
 }

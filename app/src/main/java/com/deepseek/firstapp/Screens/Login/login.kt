@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -38,6 +39,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.R
+import com.deepseek.firstapp.data.AuthViewModel
 import com.deepseek.firstapp.navigation.ROUTE_REGISTER
 
 
@@ -67,10 +69,10 @@ fun LoginScreen(navController: NavHostController) {
             )
         Spacer(modifier = Modifier.height(20.dp))
         Image(
-            painter = painterResource(id = R.drawable.yuta),
+            painter = painterResource(id = R.drawable.shopify_logo),
             contentDescription = "logo",
             modifier = Modifier
-                .size(200.dp)
+                .size(250.dp)
                 .clip(CircleShape)
         )
         Spacer(modifier = Modifier.height(10.dp))
@@ -102,9 +104,11 @@ fun LoginScreen(navController: NavHostController) {
             visualTransformation = PasswordVisualTransformation(),
 
         )
-        Spacer(modifier = Modifier)
+        Spacer(modifier = Modifier.height(20.dp))
+        val context= LocalContext.current
+        val myauth= AuthViewModel(navController,context)
         Button(
-            onClick = {},
+            onClick = {myauth.login(email,password,) },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(
                 contentColor = Color.Blue,

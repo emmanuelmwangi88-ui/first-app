@@ -33,12 +33,12 @@ fun SplashScreen(navController: NavHostController){
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF4B0082)),
+            .background(Color(0xFFC286EC)),
         contentAlignment = Alignment.Center
     ){
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
-                painter =  painterResource(id = R.drawable.gojo),
+                painter =  painterResource(id = R.drawable.splash),
                 contentDescription =  "logo",
                 modifier= Modifier
                     .fillMaxSize()

@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.Screens.Login.LoginScreen
+import com.deepseek.firstapp.Screens.Package.AddProductScreen
 import com.deepseek.firstapp.Screens.Register.RegisterScreen
 import com.deepseek.firstapp.Screens.dashboard.DashboardScreen
 import com.deepseek.firstapp.navigation.splashscreen.SplashScreen
@@ -33,6 +34,9 @@ fun AppNavHost(
         }
         composable (ROUTE_SPLASHSCREEN){
             SplashScreen(navController)
+        }
+        composable ( ROUTE_ADDPRODUCT ){
+            AddProductScreen(navController)
         }
     }
 }

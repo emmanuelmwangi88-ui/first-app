@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
@@ -24,14 +25,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.Screens.HomeScreen.Homecard
+import com.deepseek.firstapp.data.AuthViewModel
+import com.deepseek.firstapp.navigation.ROUTE_ADDPRODUCT
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen(navController: NavHostController) {
+    val context = LocalContext.current
+    val myauth = AuthViewModel(navController, context)
     Scaffold(
         // Top bar
         topBar = {
@@ -42,11 +48,17 @@ fun DashboardScreen(navController: NavHostController) {
                     titleContentColor = Color.Green,
                 ),
                 actions = {
-                    IconButton(onClick = { }) {
-                        Icon(Icons.Filled.Person, contentDescription = "Profile")
+                    IconButton(onClick = { myauth.logout() }) {
+                        Icon(Icons.Filled.Person, contentDescription = "icon")
+                    }//logout icon
+                    IconButton(onClick = {}) {
+                        Icon(
+                            Icons.Default.ExitToApp,
+                            contentDescription = "close icon"
+                        )
                     }
-                    IconButton(onClick = {  }) {
-                        Icon(Icons.Filled.Settings, contentDescription = "Settings")
+                    IconButton(onClick = { }) {
+                        Icon(Icons.Filled.Settings, contentDescription = "icon")
                     }
 
                 }
@@ -77,25 +89,27 @@ fun DashboardScreen(navController: NavHostController) {
                 )
                 NavigationBarItem(
                     selected = false,
-                    onClick = {  },
+                    onClick = { },
                     icon = { Icon(Icons.Filled.Settings, contentDescription = "Settings") },
                     label = { Text("Settings") }
                 )
             }
         }
     ) { innerPadding ->
-        Column(modifier = Modifier
-            .padding(innerPadding)
-            .fillMaxSize(),
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
-        ) { Row() {
-            Homecard(title = "Add product", background = Color.Gray)
-            Homecard(title = "Update product", background = Color.Gray)
-        }
+        ) {
             Row() {
-                Homecard(title = "Product list", background = Color.Gray)
-                Homecard(title = "Product list", background = Color.Gray)
+                Homecard(title = "Add product", background = Color.Gray, onClick = {navController.navigate(ROUTE_ADDPRODUCT)})
+                Homecard(title = "Update product", background = Color.Gray, onClick = {})
+            }
+            Row() {
+                Homecard(title = "Product list", background = Color.Gray, onClick = {})
+                Homecard(title = "Product list", background = Color.Gray, onClick = {})
             }
         }
     }
