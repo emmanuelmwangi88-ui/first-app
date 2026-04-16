@@ -67,4 +67,15 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.9.7")
     //coil
     implementation("io.coil-kt:coil-compose:2.4.0")
-}
+    //cloudinary
+    implementation("com.cloudinary:cloudinary-android:3.1.2")
+    //retrofit
+    // Core Retrofit library
+    implementation( "com.squareup.retrofit2:retrofit:2.9.0")
+    // Converter (choose one based on your project)
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")    // Gson
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0") // Moshi
+    implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")  // Scalars (plain text)
+    // Optional: Logging interceptor for debugging
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
+    }

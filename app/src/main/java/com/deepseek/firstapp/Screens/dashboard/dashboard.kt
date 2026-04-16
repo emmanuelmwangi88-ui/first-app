@@ -32,6 +32,8 @@ import androidx.navigation.compose.rememberNavController
 import com.deepseek.firstapp.Screens.HomeScreen.Homecard
 import com.deepseek.firstapp.data.AuthViewModel
 import com.deepseek.firstapp.navigation.ROUTE_ADDPRODUCT
+import com.deepseek.firstapp.navigation.ROUTE_MYINTENT
+import com.deepseek.firstapp.navigation.ROUTE_PRODUCTSLISTSCREEN
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -67,7 +69,7 @@ fun DashboardScreen(navController: NavHostController) {
 
         // Floating Action Button
         floatingActionButton = {
-            FloatingActionButton(onClick = { }) {
+            FloatingActionButton(onClick = { navController.navigate(ROUTE_ADDPRODUCT) }) {
                 Icon(Icons.Filled.Add, contentDescription = "Add")
             }
         },
@@ -108,8 +110,10 @@ fun DashboardScreen(navController: NavHostController) {
                 Homecard(title = "Update product", background = Color.Gray, onClick = {})
             }
             Row() {
-                Homecard(title = "Product list", background = Color.Gray, onClick = {})
-                Homecard(title = "Product list", background = Color.Gray, onClick = {})
+                Homecard(title = "Product list", background = Color.Gray, onClick = {navController.navigate(ROUTE_PRODUCTSLISTSCREEN)})
+                Homecard(title = "my intents", background = Color.Gray, onClick = {navController.navigate(
+                    ROUTE_MYINTENT
+                )})
             }
         }
     }

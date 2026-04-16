@@ -1,4 +1,4 @@
-package com.deepseek.firstapp.Screens.Package
+package com.deepseek.firstapp.Screens.Products
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -29,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -36,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
+import com.deepseek.firstapp.data.ProductViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -118,8 +120,24 @@ fun AddProductScreen(navController: NavHostController) {
                 Text("Select Image")
             }
             Spacer(modifier = Modifier.height(20.dp))
+            //
+            val context = LocalContext.current
+            val myproductviewmodel = ProductViewModel(navController, context)
 
-            Button(onClick = {}, modifier = Modifier.fillMaxWidth()) {
+            Button(onClick = {
+                myproductviewmodel.uploadProduct(
+                    imageUri=imageUri,
+                    name=Name,
+                    price=price,
+                    description=description
+                )
+                //clear the fields
+                Name=""
+                price=""
+                description=""
+                imageUri=null
+
+            }, modifier = Modifier.fillMaxWidth()) {
                 Text("ADD PRODUCT")
             }
         }

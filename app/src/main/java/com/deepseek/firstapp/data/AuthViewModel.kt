@@ -24,7 +24,7 @@ class AuthViewModel(var navController: NavHostController,var context: Context){
             mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val userData = User(fullname, email, password, mAuth.currentUser!!.uid)
+                        val userData = User(fullname, email, password, mAuth.currentUser!!.uid, "user")
                         val regRef = FirebaseDatabase.getInstance().getReference()
                             .child("Users/" + mAuth.currentUser!!.uid)
                         regRef.setValue(userData).addOnCompleteListener {
